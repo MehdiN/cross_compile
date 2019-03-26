@@ -12,6 +12,6 @@ This version is intended to cross-build a lightweight (barebone) ROS2 for device
 
 ## TODO
 
- - [ ] Change the file for armv7 architecture
- - [ ] Discard the unesserery packeages for a barebone ROS2
+ - [ ] Customize current files for armv7 architecture
+ - [ ] Discard the unnecessary packages for a barebone ROS2
  - [ ] Automate for cross-building custom packages
