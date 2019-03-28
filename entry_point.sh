@@ -24,8 +24,8 @@ fi
 
 # 4. Build
 # Export toolchain-file variable
-export TARGET_ARCH=aarch64
-export TARGET_TRIPLE=aarch64-linux-gnu
+export TARGET_ARCH=armhf
+export TARGET_TRIPLE=arm-linux-gnueabihf
 
 export CC=/usr/bin/$TARGET_TRIPLE-gcc
 export CXX=/usr/bin/$TARGET_TRIPLE-g++
