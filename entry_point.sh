@@ -42,11 +42,12 @@ export ROS2_INSTALL_PATH=$CC_WS/ros2_ws/install
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libz.so.1 /usr/lib/$TARGET_TRIPLE/libz.so
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libpcre.so.3 /usr/lib/$TARGET_TRIPLE/libpcre.so
 
-# Ignore some package
-touch \
-    ros2_ws/src/ros2/rviz/COLCON_IGNORE \
-    ros2_ws/src/ros-visualization/COLCON_IGNORE
-
+#checkout to master for vendor pkgs
+cd ros2_ws/src/poco_vendor
+git checkout master
+cd ..
+cd tinyxml2_vendor
+git checkout master
 cd ros2_ws
 
 # Trigger a build
@@ -55,4 +56,5 @@ colcon build --merge-install \
     --cmake-args \
         -DCMAKE_VERBOSE_MAKEFILE=ON \
         -DCMAKE_TOOLCHAIN_FILE="$(pwd)/src/ros2/cross_compile/cmake-toolchains/generic_linux.cmake" \
-        -DSECURITY=ON
+        -DSECURITY=ON \
+        -DFORCE_BUILD_VENDOR_PKG=ON
