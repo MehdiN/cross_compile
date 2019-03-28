@@ -20,14 +20,14 @@ RUN apt-get install -y \
     bash-completion
 
 # Download the Cross-compiler for aarch64/arm and qemu
-RUN apt install -y \
+RUN apt-get update && apt-get install -y \
     qemu-user-static \
     g++-aarch64-linux-gnu \
     g++-arm-linux-gnueabihf
 
 # ROS2 tools
-RUN apt update
-RUN apt install -y \
+RUN apt-get update
+RUN apt-get install -y \
     python3-pip
 
 RUN python3 -m pip install -U \
@@ -66,5 +66,5 @@ WORKDIR $CC_WS
 run mkdir qemu-user-static
 RUN cp /usr/bin/qemu-*-static qemu-user-static
 
-ENTRYPOINT ["ros2_ws/src/ros2/cross_compile/entry_point.sh"]
+ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
 CMD ["bash"]
