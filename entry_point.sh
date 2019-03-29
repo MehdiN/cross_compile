@@ -55,6 +55,6 @@ colcon build --merge-install \
     --cmake-force-configure \
     --cmake-args \
         -DCMAKE_VERBOSE_MAKEFILE=ON \
-        -DCMAKE_TOOLCHAIN_FILE="$(pwd)/src/ros2/cross_compile/cmake-toolchains/generic_linux.cmake" \
+        -DCMAKE_TOOLCHAIN_FILE="$(pwd)/src/cross_compile/cmake-toolchains/generic_linux.cmake" \
         -DSECURITY=ON \
         -DFORCE_BUILD_VENDOR_PKG=ON
