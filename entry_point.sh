@@ -48,7 +48,7 @@ git checkout master
 cd ..
 cd tinyxml2_vendor
 git checkout master
-cd ros2_ws
+cd ../..
 
 # Trigger a build
 colcon build --merge-install \
