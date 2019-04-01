@@ -65,7 +65,7 @@
 - git:
     local-name: ros2/poco_vendor
     uri: https://github.com/ros2/poco_vendor.git
-    version: crystal
+    version: master
 - git:
     local-name: ros2/rcl
     uri: https://github.com/ros2/rcl.git
