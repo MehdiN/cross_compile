@@ -42,13 +42,10 @@ export ROS2_INSTALL_PATH=$CC_WS/ros2_ws/install
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libz.so.1 /usr/lib/$TARGET_TRIPLE/libz.so
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libpcre.so.3 /usr/lib/$TARGET_TRIPLE/libpcre.so
 
-#checkout to master for vendor pkgs
-cd ros2_ws/src/poco_vendor
-git checkout master
-cd ..
-cd tinyxml2_vendor
-git checkout master
-cd ../..
+# Ignore some packages
+touch \
+    ros2_ws/src/variant/desktop/COLCON_IGNORE \
+    ros2_ws/src/variant/base/COLCON_IGNORE
 
 # Trigger a build
 colcon build --merge-install \
