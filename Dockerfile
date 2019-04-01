@@ -68,5 +68,5 @@ WORKDIR $CC_WS
 run mkdir qemu-user-static
 RUN cp /usr/bin/qemu-*-static qemu-user-static
 
-# ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
-# CMD ["bash"]
+ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
+CMD ["bash"]
