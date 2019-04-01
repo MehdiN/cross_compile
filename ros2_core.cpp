@@ -164,8 +164,8 @@
     version: crystal
 - git:
     local-name: variants/ros_core
-    uri: https://github.com/ros2-gbp/variants-release.git
-    version: release/crystal/ros_core/0.6.1-0
+    uri: https://github.com/ros2/variants.git
+    version: crystal
 
 
 
