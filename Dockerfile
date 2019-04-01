@@ -57,9 +57,10 @@ ARG ROS2_VERSION=release-latest
 
 WORKDIR $CC_WS/ros2_ws
 RUN mkdir src
-#RUN wget https://raw.githubusercontent.com/ros2/ros2/${ROS2_VERSION}/ros2.repos
-RUN rosinstall_generator ros_core --rosdistro crystal --deps > ros2_core.install
-RUN vcs-import src < ros2_core.install
+RUN wget https://raw.githubusercontent.com/MehdiN/cross_compile/armhf/ros2_core.install
+# RUN rosinstall_generator ros_core --rosdistro crystal --upstream-development --deps > ros2_core.install
+# RUN vcs-import src < ros2_core.install
+# RUN vcs import --repos --recursive src < ros2_custom.install
 WORKDIR $CC_WS/ros2_ws/src
 RUN git clone https://github.com/MehdiN/cross_compile.git
 
@@ -67,5 +68,5 @@ WORKDIR $CC_WS
 run mkdir qemu-user-static
 RUN cp /usr/bin/qemu-*-static qemu-user-static
 
-ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
-CMD ["bash"]
+# ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
+# CMD ["bash"]
