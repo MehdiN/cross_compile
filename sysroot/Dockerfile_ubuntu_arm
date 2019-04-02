@@ -70,7 +70,7 @@ RUN apt install --no-install-recommends -y \
 WORKDIR /ros2_ws
 RUN rosdep init
 RUN rosdep update
-RUN rosdep install --from-paths src 
+RUN rosdep install --from-paths src \
     --ignore-src \
     --rosdistro crystal -y -r \
     --skip-keys "console_bridge \
