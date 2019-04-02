@@ -44,8 +44,8 @@ ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libpcre.so.3 /usr/lib/$TARGET_TRIP
 
 # Ignore some packages
 touch \
-    ros2_ws/src/variant/desktop/COLCON_IGNORE \
-    ros2_ws/src/variant/base/COLCON_IGNORE
+    ros2_ws/src/variants/desktop/COLCON_IGNORE \
+    ros2_ws/src/variants/base/COLCON_IGNORE
 
 # Trigger a build
 colcon build --merge-install \
