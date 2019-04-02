@@ -42,10 +42,6 @@ export ROS2_INSTALL_PATH=$CC_WS/ros2_ws/install
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libz.so.1 /usr/lib/$TARGET_TRIPLE/libz.so
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libpcre.so.3 /usr/lib/$TARGET_TRIPLE/libpcre.so
 
-# Ignore some packages
-touch \
-    ros2_ws/src/variants/desktop/COLCON_IGNORE \
-    ros2_ws/src/variants/base/COLCON_IGNORE
 
 # Trigger a build
 colcon build --merge-install \
