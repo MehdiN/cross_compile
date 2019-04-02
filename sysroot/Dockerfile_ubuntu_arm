@@ -79,7 +79,8 @@ RUN rosdep install --from-paths src \
         libopensplice67 \
         libopensplice69 \
         rti-connext-dds-5.3.1 \
-        urdfdom_headers"
+        urdfdom_headers \
+        ros-crytasl-*"
 
 WORKDIR /
 RUN apt-get install -y symlinks
