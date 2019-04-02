@@ -44,8 +44,8 @@
     version: crystal
 - git:
     local-name: ros2/launch
-    uri: https://github.com/ros2/launch.git
-    version: crystal
+    uri: https://github.com/ros2-gbp/launch-release.git
+    version: release/crystal/ros2launch/0.7.4-0
 - git:
     local-name: ros2/libyaml_vendor
     uri: https://github.com/ros2/libyaml_vendor.git
