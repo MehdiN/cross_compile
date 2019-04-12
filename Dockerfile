@@ -65,7 +65,7 @@ WORKDIR $CC_WS/ros2_ws/src
 RUN git clone https://github.com/MehdiN/cross_compile.git
 
 WORKDIR $CC_WS
-run mkdir qemu-user-static
+RUN mkdir qemu-user-static
 RUN cp /usr/bin/qemu-*-static qemu-user-static
 
 ENTRYPOINT ["ros2_ws/src/cross_compile/entry_point.sh"]
