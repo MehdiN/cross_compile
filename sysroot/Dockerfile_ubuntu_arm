@@ -65,7 +65,8 @@ RUN python3 -m pip install -U \
 
 RUN apt install --no-install-recommends -y \
     libasio-dev \
-    libtinyxml2-dev
+    libtinyxml2-dev \
+    uncrustify
 
 WORKDIR /ros2_ws
 RUN rosdep init
@@ -74,7 +75,7 @@ RUN rosdep install \
     --from-paths src \
     --ignore-src \
     --rosdistro crystal -y  \
-    --skip-keys "console_bridge \
+    --skip-keys "libconsole-bridge-dev \
         fastcdr \
         fastrtps \
         libopensplice67 \
