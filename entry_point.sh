@@ -42,6 +42,8 @@ export ROS2_INSTALL_PATH=$CC_WS/ros2_ws/install
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libz.so.1 /usr/lib/$TARGET_TRIPLE/libz.so
 ln -s `pwd`/sysroot_docker/lib/$TARGET_TRIPLE/libpcre.so.3 /usr/lib/$TARGET_TRIPLE/libpcre.so
 
+# Go to the right directory
+cd ros2_ws
 
 # Trigger a build
 colcon build --merge-install \
