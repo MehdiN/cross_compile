@@ -70,17 +70,17 @@ RUN apt install --no-install-recommends -y \
 WORKDIR /ros2_ws
 RUN rosdep init
 RUN rosdep update
-RUN rosdep install --from-paths src \
+RUN rosdep install \
+    --from-paths src \
     --ignore-src \
-    --rosdistro crystal -y -r \
+    --rosdistro crystal -y  \
     --skip-keys "console_bridge \
         fastcdr \
         fastrtps \
         libopensplice67 \
         libopensplice69 \
         rti-connext-dds-5.3.1 \
-        urdfdom_headers \
-        ros-crytasl-*"
+        urdfdom_headers"
 
 WORKDIR /
 RUN apt-get install -y symlinks
