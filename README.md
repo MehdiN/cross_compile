@@ -31,7 +31,21 @@ The result of the build will be in `ros2_ws`:
 
 ## Status
 
-| Packages  | Build Status|
+| Packages  | Build Status| Target Running |
+|:-------:|:--------:| :----------------:|
+| ROS Core | Passing | TODO
+| Exemples | TODO | TODO
+
+
+## Usage
+
+
+## Notes
+
+### Missing packages from build:
+
+| C++ | Python |
 |:-------:|:--------:|
-| ROS Core | Failing |
-| Exemples | TODO |
+|`libtinyxml2.so.6`| catkin_pkg
+| | pyparsing
+| | em

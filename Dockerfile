@@ -57,6 +57,7 @@ ARG ROS2_VERSION=release-latest
 
 WORKDIR $CC_WS/ros2_ws
 RUN mkdir src
+COPY mypkg src/mypkg
 RUN wget https://raw.githubusercontent.com/MehdiN/cross_compile/armhf/ros2_core.install
 # RUN rosinstall_generator ros_core --rosdistro crystal --upstream-development --deps > ros2_core.install
 # RUN vcs-import src < ros2_core.install
